@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is Quishing? How to Spot QR Code Scams | Secure QR Scanner</title>
+  <meta name="description" content="Learn what quishing (QR code phishing) is, how scammers use fake stickers on parking meters, restaurants, and parcel deliveries, and how to protect yourself.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="icon.png" alt="Secure QR Scanner Logo">
+        <span>Secure QR Scanner</span>
+      </div>
+      <nav>
+        <a href="index.html">Features</a>
+        <a href="quishing.html" class="active">Quishing Guide</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose">
+    <h1>What is Quishing? (QR Phishing Guide)</h1>
+    <p>
+      <strong>Quishing</strong> (a combination of "QR code" and "phishing") is a social engineering attack where fraudsters replace legitimate QR codes with deceptive ones designed to steal passwords, credentials, or payment details.
+    </p>
+
+    <h2>Common Quishing Scenarios</h2>
+    <ul>
+      <li><strong>Parking meters & EV charging stations:</strong> Criminals paste physical sticker overlays over legitimate payment QR codes, redirecting drivers to cloned payment pages.</li>
+      <li><strong>Fake package delivery notices & SMS:</strong> Letters or text messages claiming a missed delivery with a QR code or short link that requests payment of fake customs fees.</li>
+      <li><strong>Restaurant table menus:</strong> Fraudulent stickers placed over tabletop codes that prompt diners to enter credit card numbers or download malicious APK files.</li>
+      <li><strong>Utility bills & invoices:</strong> Bogus invoices sent by mail or email containing QR codes leading to unauthorized bank transfer requests.</li>
+    </ul>
+
+    <h2>How Secure QR Scanner Protects You</h2>
+    <blockquote>
+      "Never trust a QR code blindly. Always verify where the destination address actually leads before entering any information."
+    </blockquote>
+    <ul>
+      <li><strong>Unmasking Redirects:</strong> Scammers hide fake domains behind URL shorteners (bit.ly, t.co). Secure QR Scanner resolves the entire redirect chain first.</li>
+      <li><strong>Domain Highlight:</strong> Shows you the true primary domain (eTLD+1) so deceptive addresses like <code>parking-payment.com.fake-site.ru</code> stand out immediately.</li>
+      <li><strong>Threat Databases:</strong> Verifies every link against Google Safe Browsing and on-device hash databases even when offline.</li>
+      <li><strong>Offline Heuristics:</strong> Detects look-alike letters (punycode / homograph attacks) and embedded user credentials.</li>
+    </ul>
+
+    <h2>Tips for Scanning Safely</h2>
+    <ol>
+      <li><strong>Check for stickers:</strong> Always inspect whether a QR code on a parking meter or public poster has a sticker pasted over the original surface.</li>
+      <li><strong>Review before clicking:</strong> Use a scanner that shows the full destination URL and waits for your confirmation instead of opening your browser automatically.</li>
+      <li><strong>Check SMS links:</strong> If you receive a suspicious text or chat link, use Android's Share feature to send it to <em>Check link</em> in Secure QR Scanner before opening it.</li>
+    </ol>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Secure QR Scanner. Free, private, and ad-free. | <a href="index.html">Home</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

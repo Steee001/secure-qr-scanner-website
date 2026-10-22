@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Secure QR Scanner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="icon.png" alt="Secure QR Scanner Logo">
+        <span>Secure QR Scanner</span>
+      </div>
+      <nav>
+        <a href="index.html">Features</a>
+        <a href="quishing.html">Quishing Guide</a>
+        <a href="privacy.html" class="active">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose">
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: October 2026 (Version 1.9.0)</em></p>
+
+    <p>
+      Secure QR Scanner is designed with privacy and data protection as core principles.
+      The app has no user accounts, requires no registration, and displays zero advertisements.
+    </p>
+
+    <h2>1. Operating Modes</h2>
+    <p>
+      <strong>Normal Mode (Default):</strong> Provides full real-time security checking, Safe Browsing verification, redirect resolution, product barcode details, and recall checks.
+    </p>
+    <p>
+      <strong>Optional Local Checks Mode:</strong> Blocks automatic network requests by this app (security feed sync, redirects, online checks, product/recall lookups, image downloads, and diagnostics reporting). Scanned links are evaluated solely against the locally cached threat database and offline phishing heuristics. Enabling or disabling local mode requires a complete process restart (Android App Info &rarr; Force stop, then reopen).
+    </p>
+
+    <h2>2. Link Security & Threat Verification</h2>
+    <p>
+      In Normal Mode, web links (HTTP/HTTPS) are evaluated before opening:
+    </p>
+    <ul>
+      <li><strong>Redirect Resolution:</strong> The app contacts the initial host and follows intermediate redirect hops (e.g., bit.ly, t.co) to reveal the final destination domain. Contacted servers receive standard HTTP requests containing your IP address.</li>
+      <li><strong>Google Safe Browsing:</strong> URL-derived hash prefixes are checked against Google Safe Browsing. Prior to the first full offline database synchronization, a fallback check may query the Google Safe Browsing Lookup API.</li>
+      <li><strong>Offline Phishing Heuristics:</strong> Offline pattern matching flags punycode tricks, look-alike domains, and suspicious subdomain nesting directly on your device.</li>
+    </ul>
+
+    <h2>3. Product Barcodes & Recalls</h2>
+    <p>
+      Scanning a product barcode (EAN/UPC) in Normal Mode queries Open Food Facts and affiliated databases in parallel, with UPCItemDB as a fallback. If a product is identified, the app checks official recall databases (EU Safety Gate, openFDA, CPSC). Local mode uses only previously cached product information.
+    </p>
+
+    <h2>4. Document Scanning & Text OCR</h2>
+    <p>
+      Document scanning utilizes the Google Play services ML Kit document scanner. Multi-page PDF assembly and OCR text extraction are performed entirely on your device. Scanned document pages, temporary images, and exported PDFs remain stored in local device storage and are never uploaded to any remote server or cloud.
+    </p>
+
+    <h2>5. Local Data Storage & Encryption</h2>
+    <p>
+      Your scan history is encrypted on-device using AES-256-GCM via the Android Keystore.
+      Nobody else—including the app developer—has access to your history. You can clear your scan history or disable history logging at any time in Settings.
+    </p>
+
+    <h2>6. Crash Diagnostics & Technical Identifiers</h2>
+    <p>
+      In Normal Mode, crash reporting uses Firebase Crashlytics and is enabled by default to ensure app stability across Android versions. You can disable Crash Diagnostics at any time in <em>Settings &rarr; Privacy & Security &rarr; Crash diagnostics</em> (effective upon restarting the app). In Local Mode, Firebase Crashlytics is not initialized and no reports are transmitted.
+    </p>
+    <p>
+      Crash reports may include technical stack traces, OS and device models, and installation identifiers. The app never includes scanned URLs, Wi-Fi credentials, or sensitive text in Crashlytics reports.
+    </p>
+
+    <h2>7. Contact</h2>
+    <p>
+      If you have questions regarding this privacy policy or your data rights, please contact the developer via the support link on the Google Play Store listing.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Secure QR Scanner. Free, private, and ad-free. | <a href="index.html">Home</a> | <a href="quishing.html">Quishing Guide</a></p>
+  </footer>
+</body>
+</html>
