@@ -6,63 +6,14 @@
   <title>Feedback & Issue Reports | Secure QR Scanner</title>
   <meta name="description" content="Submit feedback, report bugs, suggest features, or improve translations for Secure QR Scanner.">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .context-badge {
-      display: none;
-      background: var(--surface-card);
-      border: 1px solid var(--brand-pine);
-      color: var(--brand-mint);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
-      display: inline-block;
-    }
-    .feedback-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--brand-pine);
-      color: #fff;
-      padding: 0.65rem 1.25rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-top: 1rem;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .action-btn:hover {
-      background: #148077;
-      transform: translateY(-2px);
-      text-decoration: none;
-    }
-    .notice-box {
-      background: var(--surface-dark);
-      border-left: 4px solid var(--accent-warn);
-      padding: 1rem 1.25rem;
-      border-radius: 0 8px 8px 0;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-    .notice-box strong {
-      color: var(--text-primary);
-    }
-  </style>
 </head>
 <body>
   <header>
     <div class="nav-container">
-      <div class="logo">
+      <a href="index.html" class="logo">
         <img src="icon.png" alt="Secure QR Scanner Logo">
         <span>Secure QR Scanner</span>
-      </div>
+      </a>
       <nav>
         <a href="index.html">Features</a>
         <a href="quishing.html">Quishing Guide</a>
@@ -121,7 +72,13 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Secure QR Scanner. Free, private, and ad-free. | <a href="index.html">Home</a> | <a href="quishing.html">Quishing Guide</a> | <a href="privacy.html">Privacy Policy</a> | <a href="feedback.html">Feedback</a></p>
+    <p>&copy; 2026 Secure QR Scanner. Free, private, and ad-free.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="quishing.html">Quishing Guide</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="feedback.html">Feedback</a>
+    </div>
   </footer>
 
   <script>
