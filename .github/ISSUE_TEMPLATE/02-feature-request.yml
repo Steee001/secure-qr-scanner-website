@@ -1,0 +1,31 @@
+name: Feature request or format suggestion
+description: Suggest a new feature, a regional payment scheme, or a local barcode source
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest an improvement, a regional payment standard (e.g. UPI, QRIS, PromptPay, VietQR), or a barcode database for Secure QR Scanner. You can write in your preferred language.
+  - type: input
+    id: version
+    attributes:
+      label: App Version
+      description: The app version you are using (e.g. 2.0.0)
+    validations:
+      required: false
+  - type: input
+    id: locale
+    attributes:
+      label: Device Language / Locale
+      description: Your app or system language (e.g. en, de, hi, id, th, ja)
+    validations:
+      required: false
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature Description
+      description: What feature, format, or capability would you like to see?
+      placeholder: Describe the idea and how it would be useful...
+    validations:
+      required: true

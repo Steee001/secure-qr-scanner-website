@@ -1,0 +1,49 @@
+name: Security warning or translation feedback
+description: Report a false phishing warning, a missed threat, or a translation improvement
+title: "[Security/Translation]: "
+labels: ["verdict-or-i18n", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us refine phishing heuristics or improve translations across our 25 supported locales.
+  - type: input
+    id: version
+    attributes:
+      label: App Version
+      description: The app version you are using (e.g. 2.0.0)
+    validations:
+      required: false
+  - type: input
+    id: locale
+    attributes:
+      label: Language / Locale
+      description: The affected language or your system locale (e.g. de, hi, id, th, ja, vi)
+    validations:
+      required: false
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feedback Category
+      options:
+        - "False phishing warning on a benign domain"
+        - "Suspicious link was not flagged"
+        - "Translation issue or awkward phrasing"
+        - "Offline security database feedback"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: "For domain reports, provide only the domain name (e.g. example.com), NOT full private URLs with tokens, passwords, or personal query parameters. For translation issues, describe the screen, current wording, and suggested improvement."
+      placeholder: Describe the domain or translation issue...
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy_confirmation
+    attributes:
+      label: Privacy Confirmation
+      options:
+        - label: "I confirm that I have NOT included full private URLs containing personal query tokens, passwords, or sensitive credentials in this public report."
+          required: true

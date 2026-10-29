@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback & Issue Reports | Secure QR Scanner</title>
+  <meta name="description" content="Submit feedback, report bugs, suggest features, or improve translations for Secure QR Scanner.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .context-badge {
+      display: none;
+      background: var(--surface-card);
+      border: 1px solid var(--brand-pine);
+      color: var(--brand-mint);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brand-pine);
+      color: #fff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .action-btn:hover {
+      background: #148077;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .notice-box {
+      background: var(--surface-dark);
+      border-left: 4px solid var(--accent-warn);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .notice-box strong {
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="icon.png" alt="Secure QR Scanner Logo">
+        <span>Secure QR Scanner</span>
+      </div>
+      <nav>
+        <a href="index.html">Features</a>
+        <a href="quishing.html">Quishing Guide</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="feedback.html" class="active">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose">
+    <h1>Feedback & Issue Reports</h1>
+    <p>
+      Your feedback directly shapes the development of Secure QR Scanner. We welcome bug reports, format suggestions, translation corrections, and feature ideas.
+    </p>
+
+    <div id="detected-context" class="context-badge" style="display:none;"></div>
+
+    <div class="notice-box">
+      <strong>Write in any language:</strong> Feel free to write your feedback in your native language (English, German, Hindi, Indonesian, Vietnamese, Thai, Japanese, Korean, Arabic, Spanish, etc.). We use automated translation to review and process incoming reports.
+    </div>
+
+    <div class="feedback-grid">
+      <div class="card">
+        <span class="card-icon">🐛</span>
+        <h3>Report a Bug or Scan Problem</h3>
+        <p>Unreadable QR or barcode, payment scheme issue (UPI, QRIS, PromptPay, VietQR), crash, or unexpected behavior.</p>
+        <a id="link-bug" href="https://github.com/Steee001/secure-qr-scanner-website/issues/new?template=01-bug-or-scan-issue.yml" class="action-btn" target="_blank" rel="noopener">Open Issue Form &rarr;</a>
+      </div>
+
+      <div class="card">
+        <span class="card-icon">💡</span>
+        <h3>Feature Request / Formats</h3>
+        <p>Missing regional QR standard, national product barcode database, or ideas to make scanning safer and faster.</p>
+        <a id="link-feat" href="https://github.com/Steee001/secure-qr-scanner-website/issues/new?template=02-feature-request.yml" class="action-btn" target="_blank" rel="noopener">Suggest Feature &rarr;</a>
+      </div>
+
+      <div class="card">
+        <span class="card-icon">🛡️</span>
+        <h3>Warning or Translation</h3>
+        <p>Report a false phishing warning on a benign domain, an unflagged suspicious link, or awkward phrasing in your language.</p>
+        <a id="link-sec" href="https://github.com/Steee001/secure-qr-scanner-website/issues/new?template=03-false-warning-or-translation.yml" class="action-btn" target="_blank" rel="noopener">Report Issue &rarr;</a>
+      </div>
+    </div>
+
+    <div class="notice-box" style="border-left-color: var(--accent-danger);">
+      <strong>Privacy Protection:</strong> Secure QR Scanner has zero tracking and never collects your scan history. Because GitHub issue reports are public, <strong>never include confidential Wi-Fi passwords, 2FA secret keys, personal banking credentials, or private URLs with tokens</strong>. For domain issues, provide only the domain name (e.g. <code>example.com</code>).
+    </div>
+
+    <h2>No GitHub account?</h2>
+    <p>
+      If you do not have a GitHub account, you can also leave a rating or review directly on the Google Play Store:
+    </p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.steee001.secureqrscanner" class="action-btn" target="_blank" rel="noopener">Rate on Google Play &rarr;</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Secure QR Scanner. Free, private, and ad-free. | <a href="index.html">Home</a> | <a href="quishing.html">Quishing Guide</a> | <a href="privacy.html">Privacy Policy</a> | <a href="feedback.html">Feedback</a></p>
+  </footer>
+
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var version = params.get('v') || '';
+      var lang = params.get('lang') || '';
+
+      var repo = 'https://github.com/Steee001/secure-qr-scanner-website/issues/new';
+      var bugLink = document.getElementById('link-bug');
+      var featLink = document.getElementById('link-feat');
+      var secLink = document.getElementById('link-sec');
+
+      var extra = (version ? '&version=' + encodeURIComponent(version) : '') +
+                  (lang ? '&locale=' + encodeURIComponent(lang) : '');
+
+      if (bugLink) bugLink.href = repo + '?template=01-bug-or-scan-issue.yml' + extra;
+      if (featLink) featLink.href = repo + '?template=02-feature-request.yml' + extra;
+      if (secLink) secLink.href = repo + '?template=03-false-warning-or-translation.yml' + extra;
+
+      if (version || lang) {
+        var badge = document.getElementById('detected-context');
+        if (badge) {
+          badge.textContent = 'App version: ' + (version || 'unknown') + ' · Language: ' + (lang || 'unknown');
+          badge.style.display = 'inline-block';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

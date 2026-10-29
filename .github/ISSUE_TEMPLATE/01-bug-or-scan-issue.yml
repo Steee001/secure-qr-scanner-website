@@ -1,0 +1,52 @@
+name: Bug or scan issue
+description: Report a bug, an unreadable code, or an app crash
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! You can write in your preferred language (English, German, Hindi, Indonesian, Thai, Vietnamese, Japanese, etc.).
+  - type: input
+    id: version
+    attributes:
+      label: App Version
+      description: The app version you are using (e.g. 2.0.0)
+    validations:
+      required: false
+  - type: input
+    id: locale
+    attributes:
+      label: Device Language / Locale
+      description: Your app or system language (e.g. en, de, hi, id, th, ja)
+    validations:
+      required: false
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue Category
+      options:
+        - "QR / Barcode not recognized or misclassified"
+        - "Payment QR format issue (UPI, QRIS, PromptPay, VietQR, etc.)"
+        - "Product barcode not found or incorrect"
+        - "Document scanner / PDF export problem"
+        - "Text OCR snapshot issue"
+        - "App crash or unexpected error"
+        - "Other bug"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of the Problem
+      description: Describe what happened and what you expected. Feel free to write in your own language.
+      placeholder: What went wrong? What type of code were you scanning?
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy_confirmation
+    attributes:
+      label: Privacy Confirmation
+      options:
+        - label: "I confirm that I have NOT included sensitive private passwords, 2FA secret keys, or personal banking credentials in this public report."
+          required: true
