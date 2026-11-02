@@ -1,0 +1,16 @@
+# Secure QR Scanner (com.steee001.secureqrscanner)
+# Coordinated Vulnerability Disclosure (RFC 9116 & EU Cyber Resilience Act)
+#
+# Triage & Patch SLAs:
+# - Initial triage & acknowledgment: < 24 h
+# - Critical / actively exploited (CVSS >= 9.0): < 72 h emergency patch release
+# - High severity (CVSS 7.0-8.9): < 14 days
+# - Medium / Low severity (CVSS < 7.0): < 30 days
+#
+# Do NOT disclose unpatched vulnerabilities in public GitHub issues.
+
+Contact: https://github.com/Steee001/secure-qr-scanner-website/security/advisories/new
+Expires: 2027-10-31T00:00:00Z
+Preferred-Languages: de, en
+Canonical: https://steee001.github.io/secure-qr-scanner-website/.well-known/security.txt
+
