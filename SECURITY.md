@@ -8,8 +8,8 @@ Security updates are provided free of charge for the current production release 
 
 | Version | Supported | Distribution Channel |
 |---|---|---|
-| `3.4.x` (latest Play Store release) | Yes | Google Play (`com.steee001.secureqrscanner`) |
-| `< 3.4.0` | No | Upgrade to latest Google Play release |
+| `3.6.x` (latest Play Store release) | Yes | Google Play (`com.steee001.secureqrscanner`) |
+| `< 3.6.0` | No | Upgrade to latest Google Play release |
 
 ## Reporting a Vulnerability
 
