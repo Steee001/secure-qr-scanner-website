@@ -2,32 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Secure QR Scanner | Scam & Phishing Defense for Android</title>
-  <meta name="description" content="Free Android QR and barcode scanner with built-in scam and phishing defense. Checks links before opening, resolves short links, warns about fake QR codes (quishing) and verifies SMS links.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure QR Scanner | Scam &amp; Phishing Defense for Android</title>
+  <meta name="description" content="Free Android QR and barcode scanner with built-in scam and phishing defense. Checks links before opening, resolves short links, checks food allergens and product recalls, verifies QR invoices, and scans searchable PDFs without ads or tracking.">
+  <link rel="canonical" href="https://steee001.github.io/secure-qr-scanner-website/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Secure QR Scanner">
+  <meta property="og:title" content="Secure QR Scanner | Scam &amp; Phishing Defense for Android">
+  <meta property="og:description" content="Free Android QR and barcode scanner that unmasks phishing links, warns on quishing stickers, checks food allergens and product recalls, verifies GiroCode/QR-Bill invoices, and exports searchable offline A4 PDFs.">
+  <meta property="og:url" content="https://steee001.github.io/secure-qr-scanner-website/">
+  <meta property="og:image" content="https://steee001.github.io/secure-qr-scanner-website/preview.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Secure QR Scanner",
+      "operatingSystem": "Android 7.0+",
+      "applicationCategory": "SecurityApplication",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "url": "https://steee001.github.io/secure-qr-scanner-website/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.steee001.secureqrscanner",
+      "image": "https://steee001.github.io/secure-qr-scanner-website/preview.png",
+      "description": "Ad-free Android QR, barcode, invoice, allergen, and offline A4 PDF scanner with Safe Browsing checks, redirect resolution, recall precision matching, and zero tracking."
+    }
+  </script>
 </head>
 <body>
   <header>
+    <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
     <div class="nav-container">
       <a href="index.html" class="logo">
-        <img src="icon.png" alt="Secure QR Scanner Logo" width="36" height="36">
+        <img src="icon.png" alt="" width="36" height="36">
         <span>Secure QR Scanner</span>
       </a>
-      <nav>
-        <a href="index.html" class="active">Features</a>
-        <a href="quishing.html">Quishing Guide</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="https://play.google.com/store/apps/details?id=com.steee001.secureqrscanner" class="nav-cta" target="_blank" rel="noopener">Get App &rarr;</a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Features</a></li>
+          <li><a href="allergen.html">Allergens</a></li>
+          <li><a href="invoice.html">Invoices</a></li>
+          <li><a href="pdf-scanner.html">PDF Scan</a></li>
+          <li><a href="quishing.html">Quishing</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="https://play.google.com/store/apps/details?id=com.steee001.secureqrscanner" class="nav-cta" target="_blank" rel="noopener">Get App &rarr;</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-copy">
@@ -51,7 +83,7 @@
           <span class="reticle-corner-tr" aria-hidden="true"></span>
           <span class="reticle-corner-bl" aria-hidden="true"></span>
           <span class="reticle-corner-br" aria-hidden="true"></span>
-          <img src="preview.png" alt="Secure QR Scanner review dialog showing a flagged threat" width="340" height="604" loading="eager">
+          <img src="preview.png" alt="Secure QR Scanner review dialog showing a flagged threat" width="340" height="604" fetchpriority="high">
           <div class="hero-hud-telemetry">
             <span>Scan Review Active</span>
             <span class="active">Threat Neutralized</span>
@@ -244,6 +276,39 @@
         </div>
       </div>
 
+      <!-- Topic Deep Dives -->
+      <div class="section-header" style="margin-top: 3.5rem;">
+        <h2>Protection &amp; Utility Guides</h2>
+        <p>Explore how each scanner mode works without ads, accounts, or analytics.</p>
+      </div>
+
+      <div class="topic-grid">
+        <article class="topic-card">
+          <span class="topic-card-tag">Link &amp; Sticker Defense</span>
+          <h3>Quishing Defense Guide</h3>
+          <p>How fake QR stickers, shortened links, and homograph domains are unmasked before your browser connects.</p>
+          <a href="quishing.html">Read the Quishing Guide &rarr;</a>
+        </article>
+        <article class="topic-card">
+          <span class="topic-card-tag">Supermarket &amp; Pharmacy</span>
+          <h3>Allergens &amp; Recalls</h3>
+          <p>Personal EU-14 allergen alerts and precision product recall checks across EU Safety Gate, RASFF, openFDA, CPSC, and FSA.</p>
+          <a href="allergen.html">Explore Allergen &amp; Recall Checks &rarr;</a>
+        </article>
+        <article class="topic-card">
+          <span class="topic-card-tag">Payment Security</span>
+          <h3>QR Invoices &amp; GiroCode</h3>
+          <p>Offline validation for SEPA GiroCode, Swiss QR-Bill, PagoPA, SPAYD, PIX, and UPI with optical invoice cross-checks.</p>
+          <a href="invoice.html">Inspect Invoice Protection &rarr;</a>
+        </article>
+        <article class="topic-card">
+          <span class="topic-card-tag">Offline Documents</span>
+          <h3>Offline A4 PDF Scanner</h3>
+          <p>Scan multi-page documents to searchable A4 PDFs with local OCR &mdash; works even without Google Play Services.</p>
+          <a href="pdf-scanner.html">See Offline PDF Scanning &rarr;</a>
+        </article>
+      </div>
+
       <!-- CTA Banner -->
       <div class="cta-banner">
         <div class="cta-banner-content">
@@ -254,6 +319,7 @@
         </div>
         <div class="cta-banner-actions">
           <a href="https://play.google.com/store/apps/details?id=com.steee001.secureqrscanner" class="btn-cyber" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.5 2.75 19.75 12 4.5 21.25V2.75Z"/></svg>
             <span>Get it on Google Play &rarr;</span>
           </a>
           <a href="https://ko-fi.com/steee001" class="btn-secondary" target="_blank" rel="noopener">
@@ -268,6 +334,9 @@
     <p>&copy; 2026 Secure QR Scanner. Free, private, and ad-free.</p>
     <div class="footer-links">
       <a href="index.html">Features</a>
+      <a href="allergen.html">Allergens &amp; Recalls</a>
+      <a href="invoice.html">QR Invoices</a>
+      <a href="pdf-scanner.html">PDF Scanner</a>
       <a href="quishing.html">Quishing Guide</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="feedback.html">Feedback</a>

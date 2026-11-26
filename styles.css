@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   /* Color Palette — High-Tech Cyber Security & Obsidian */
   --bg-ground: #071110;
   --surface-1: #0C1A18;
@@ -8,19 +9,20 @@
   --ink-muted: #A3C5BF;
   --accent-cyber: #00D696;
   --accent-cyber-dark: #00A876;
-  --status-danger: #EF4444;
+  --status-danger: #F87171;
   --status-danger-bg: #2A1215;
   --status-warn: #F59E0B;
   --status-warn-bg: #2B1F0C;
   --status-safe: #10B981;
   --status-safe-bg: #0E2922;
 
-  /* Typography — 5 Strict Steps */
-  --font-sans: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  /* Typography — System Stack Only (Zero External Font CDNs) */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --step-display: clamp(2.6rem, 1.8rem + 4vw, 4.4rem);
-  --step-heading: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem);
-  --step-subhead: 1.25rem;
+  --step-display: clamp(2.4rem, 1.8rem + 3.5vw, 4rem);
+  --step-heading: clamp(1.55rem, 1.25rem + 1.2vw, 2.2rem);
+  --step-subhead: 1.2rem;
   --step-body: 1rem;
   --step-caption: 0.875rem;
 
@@ -60,8 +62,37 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-cyber);
+  outline: 3px solid var(--accent-cyber);
   outline-offset: 3px;
+}
+
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.skip-link:focus-visible {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 300;
+  background: var(--accent-cyber);
+  color: #04120F;
+  font-weight: 700;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+code, pre {
+  font-family: var(--font-mono);
 }
 
 /* Header & Sticky Nav */
@@ -105,30 +136,41 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-size: var(--step-caption);
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  list-style: none;
 }
 nav a {
   color: var(--ink-muted);
-  padding: 0.5rem 0.85rem;
+  padding: 0.45rem 0.75rem;
   border-radius: var(--radius-sm);
   transition: color 0.15s ease, background-color 0.15s ease;
-  min-height: 44px;
+  min-block-size: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  white-space: nowrap;
 }
 nav a:hover {
   color: var(--ink-primary);
   background: var(--surface-2);
   text-decoration: none;
 }
-nav a.active {
+nav a.active,
+nav a[aria-current="page"] {
   color: var(--ink-primary);
   background: var(--surface-2);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  box-shadow: inset 0 -2px 0 var(--accent-cyber);
 }
 
 .nav-cta {
@@ -730,6 +772,176 @@ footer p {
   }
 }
 
+/* Topic Cards & Landing Page Components (AP-115) */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.topic-card {
+  background: var(--surface-1);
+  border: 1px solid var(--surface-interactive);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.topic-card:hover {
+  background: var(--surface-2);
+  border-color: var(--accent-cyber-dark);
+  transform: translateY(-2px);
+}
+.topic-card-tag {
+  font-size: var(--step-caption);
+  color: var(--accent-cyber);
+  font-weight: 700;
+}
+.topic-card h3 {
+  font-size: var(--step-subhead);
+  line-height: 1.25;
+  color: var(--ink-primary);
+}
+.topic-card p {
+  color: var(--ink-muted);
+  font-size: var(--step-caption);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.topic-card a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  font-weight: 700;
+  font-size: var(--step-caption);
+}
+
+.breadcrumbs {
+  font-size: var(--step-caption);
+  color: var(--ink-muted);
+  margin-bottom: 1.25rem;
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 0.45rem;
+  color: var(--ink-muted);
+}
+.breadcrumbs a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+}
+
+.topic-hero {
+  background: var(--surface-1);
+  border: 1px solid var(--surface-interactive);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1.2rem + 2vw, 2.75rem);
+  margin-bottom: 2.5rem;
+}
+.topic-kicker {
+  display: inline-block;
+  font-size: var(--step-caption);
+  font-weight: 700;
+  color: var(--accent-cyber);
+  background: var(--status-safe-bg);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+.topic-lead {
+  font-size: var(--step-subhead);
+  color: var(--ink-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+.play-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.data-table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--surface-interactive);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface-1);
+  font-size: var(--step-caption);
+  text-align: left;
+}
+.data-table caption {
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--ink-primary);
+  background: var(--surface-2);
+}
+.data-table th,
+.data-table td {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--surface-interactive);
+  vertical-align: top;
+}
+.data-table th {
+  color: var(--accent-cyber);
+  font-weight: 700;
+}
+.data-table td {
+  color: var(--ink-primary);
+}
+
+.de-summary {
+  background: var(--surface-1);
+  border: 1px solid var(--surface-interactive);
+  border-left: 4px solid var(--accent-cyber);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 2.5rem;
+}
+.de-summary h2 {
+  margin-top: 0;
+}
+
+@media (forced-colors: active) {
+  nav a[aria-current="page"],
+  nav a.active {
+    outline: 2px solid Highlight;
+    box-shadow: none;
+  }
+  :focus-visible {
+    outline: 3px solid Highlight;
+  }
+  .topic-card,
+  .topic-hero,
+  .callout-box,
+  .cta-banner,
+  .telemetry-step,
+  .de-summary {
+    border: 1px solid CanvasText;
+  }
+  .btn-cyber,
+  .nav-cta {
+    border: 2px solid ButtonText;
+  }
+}
+
 /* Responsive Media Queries */
 @media (max-width: 920px) {
   .hero {
@@ -762,7 +974,7 @@ footer p {
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 780px) {
   .nav-container {
     flex-direction: column;
     align-items: center;
@@ -770,6 +982,10 @@ footer p {
     gap: 0.75rem;
   }
   nav {
+    width: 100%;
+    justify-content: center;
+  }
+  nav ul {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -784,7 +1000,8 @@ footer p {
 }
 
 @media (max-width: 520px) {
-  .hero-actions {
+  .hero-actions,
+  .play-badge-row {
     flex-direction: column;
     width: 100%;
   }
